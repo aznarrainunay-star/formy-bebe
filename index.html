@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayang-day 💗 | Jihan's 22nd Birthday</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+  --pink:#ff79b8;
+  --pink2:#ffb7da;
+  --blue:#65cfff;
+  --blue2:#b9ecff;
+  --dark:#11152d;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Poppins,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(255,121,184,.28),transparent 30%),
+    radial-gradient(circle at 85% 20%,rgba(101,207,255,.24),transparent 30%),
+    linear-gradient(135deg,#101329,#17183a 48%,#101b35);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:10;
+  background:linear-gradient(120deg,transparent 0 45%,rgba(255,255,255,.035) 50%,transparent 55%);
+  background-size:250% 100%;animation:shine 8s linear infinite;
+}
+@keyframes shine{to{background-position:-250% 0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes pulse{50%{transform:scale(1.06)}}
+@keyframes pop{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+@keyframes glow{50%{box-shadow:0 0 35px rgba(255,121,184,.55),0 0 70px rgba(101,207,255,.25)}}
+
+#intro{
+  position:fixed;inset:0;z-index:100;background:#0e1026;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  transition:opacity .9s,visibility .9s;
+}
+#intro.hide{opacity:0;visibility:hidden}
+.intro-card{max-width:650px;padding:35px}
+.intro-card .tiny{color:var(--blue);letter-spacing:4px;font-size:.8rem}
+.intro-card h1{font-family:"Baloo 2";font-size:clamp(3rem,9vw,7rem);line-height:.9;margin:15px 0;
+  background:linear-gradient(90deg,var(--pink),#fff,var(--blue));-webkit-background-clip:text;color:transparent}
+.intro-card p{color:#cfd4ed;margin:18px auto 28px;max-width:500px}
+button{
+  border:0;cursor:pointer;font:700 1rem Poppins;color:white;
+  background:linear-gradient(100deg,var(--pink),#a77cff,var(--blue));
+  padding:14px 25px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.3);
+  transition:.25s;
+}
+button:hover{transform:translateY(-3px) scale(1.03)}
+
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:20;
+  display:flex;gap:8px;padding:8px;border:1px solid rgba(255,255,255,.15);
+  background:rgba(14,16,38,.65);backdrop-filter:blur(15px);border-radius:999px}
+nav a{color:#fff;text-decoration:none;padding:9px 14px;border-radius:999px;font-size:.8rem}
+nav a:hover{background:rgba(255,255,255,.12)}
+
+section{min-height:100vh;padding:110px 7vw 80px;display:flex;align-items:center;justify-content:center}
+.hero{position:relative;text-align:center;overflow:hidden}
+.hero-inner{max-width:1000px}
+.badge{display:inline-block;padding:7px 14px;border:1px solid rgba(255,255,255,.2);
+  border-radius:999px;background:rgba(255,255,255,.06);color:#dce7ff;font-size:.8rem}
+h2{font-family:"Baloo 2";font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin:14px 0}
+.gradient{background:linear-gradient(90deg,var(--pink),#fff,var(--blue));-webkit-background-clip:text;color:transparent}
+.hero p{max-width:680px;margin:18px auto;color:#cdd2e8;line-height:1.8}
+.hero-art{margin:35px auto 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.hero-art img{width:min(410px,90vw);height:245px;object-fit:cover;border-radius:28px;border:2px solid rgba(255,255,255,.14);
+  box-shadow:0 25px 70px rgba(0,0,0,.4);animation:float 5s ease-in-out infinite}
+.hero-art img:nth-child(2){animation-delay:-2.2s;transform:rotate(2deg)}
+.scroll{margin-top:35px;color:#aeb6d6;font-size:.8rem}
+
+.story{background:linear-gradient(180deg,transparent,rgba(255,121,184,.04),transparent)}
+.story-grid{max-width:1050px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.story-text p{color:#cdd2e8;line-height:1.9;margin:16px 0}
+.card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:28px;
+  box-shadow:0 20px 60px rgba(0,0,0,.2);backdrop-filter:blur(12px)}
+.quote{font-family:"Baloo 2";font-size:1.5rem;color:#fff}
+.heart{font-size:3rem;animation:pulse 2s infinite;display:block;margin-bottom:10px}
+
+.gallery-wrap{max-width:1200px;width:100%;text-align:center}
+.gallery-wrap>p{color:#bfc7e2;margin:12px auto 30px;max-width:650px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.photo{position:relative;overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.14);
+  aspect-ratio:16/10;background:#202440;box-shadow:0 15px 45px rgba(0,0,0,.28);cursor:pointer}
+.photo img{width:100%;height:100%;object-fit:cover;transition:.45s}
+
+.memory-stage{position:relative;max-width:1100px;width:100%;height:570px;margin:15px auto 0;isolation:isolate}
+.memory-stage:before{content:"";position:absolute;inset:8% 18%;border-radius:50%;background:radial-gradient(circle,rgba(255,121,184,.22),rgba(101,207,255,.10) 45%,transparent 70%);filter:blur(20px);z-index:-2}
+.memory-glow{position:absolute;inset:18% 30%;background:linear-gradient(135deg,rgba(255,121,184,.15),rgba(101,207,255,.12));filter:blur(45px);border-radius:50%;z-index:-1}
+.memory-photo{position:absolute;width:260px;height:175px;padding:7px;border-radius:20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);box-shadow:0 22px 55px rgba(0,0,0,.45),0 0 25px rgba(255,255,255,.06);backdrop-filter:blur(8px);transform:rotate(var(--r));transition:transform .45s ease,box-shadow .45s ease,z-index .2s;animation:memoryFloat 6s ease-in-out infinite}
+.memory-photo img{width:100%;height:100%;object-fit:cover;border-radius:14px;display:block}
+.memory-photo span{position:absolute;left:12px;bottom:11px;padding:5px 9px;border-radius:999px;background:rgba(10,12,30,.72);backdrop-filter:blur(8px);font-size:.68rem;color:#fff;white-space:nowrap}
+.memory-photo:hover{transform:rotate(0deg) scale(1.1) translateY(-8px)!important;z-index:20;box-shadow:0 30px 75px rgba(0,0,0,.6),0 0 35px rgba(255,121,184,.22)}
+@keyframes memoryFloat{0%,100%{margin-top:0}50%{margin-top:-9px}}
+.mp1{left:2%;top:18%;--r:-9deg;animation-delay:-.5s}.mp2{left:17%;top:2%;--r:5deg;animation-delay:-2s}.mp3{left:36%;top:14%;--r:-3deg;animation-delay:-1s}.mp4{right:3%;top:8%;--r:8deg;animation-delay:-3s}.mp5{left:7%;bottom:4%;--r:6deg;animation-delay:-4s}.mp6{left:28%;bottom:1%;--r:-7deg;animation-delay:-1.5s}.mp7{left:48%;bottom:7%;--r:4deg;animation-delay:-2.5s}.mp8{right:18%;bottom:3%;--r:-6deg;animation-delay:-.8s}.mp9{right:0;top:35%;--r:-7deg;animation-delay:-3.5s}.mp10{right:28%;top:3%;--r:10deg;animation-delay:-1.8s}
+@media(max-width:800px){.memory-stage{height:720px;max-width:650px}.memory-photo{width:210px;height:145px}.mp1{left:0;top:16%}.mp2{left:25%;top:5%}.mp3{left:42%;top:22%}.mp4{right:0;top:7%}.mp5{left:3%;bottom:13%}.mp6{left:28%;bottom:3%}.mp7{left:49%;bottom:18%}.mp8{right:4%;bottom:3%}.mp9{right:0;top:43%}.mp10{right:22%;top:36%}}
+@media(max-width:520px){.memory-stage{height:680px}.memory-photo{width:165px;height:115px;padding:5px;border-radius:15px}.memory-photo span{font-size:.55rem;left:8px;bottom:8px;padding:4px 7px}.mp1{left:0;top:12%}.mp2{left:20%;top:2%}.mp3{left:40%;top:19%}.mp4{right:-3%;top:4%}.mp5{left:0;bottom:15%}.mp6{left:25%;bottom:3%}.mp7{left:45%;bottom:19%}.mp8{right:0;bottom:3%}.mp9{right:-2%;top:43%}.mp10{right:18%;top:35%}}
+.photo:hover img{transform:scale(1.07)}
+.photo span{position:absolute;bottom:0;left:0;right:0;padding:22px 14px 12px;
+  background:linear-gradient(transparent,rgba(0,0,0,.75));font-size:.8rem;text-align:left}
+
+.letter{max-width:800px;width:100%;text-align:center}
+.envelope{margin:35px auto 20px;max-width:620px;min-height:390px;padding:38px;
+  background:linear-gradient(145deg,#fff,#ffeaf5);color:#29304c;border-radius:25px;
+  box-shadow:0 25px 80px rgba(0,0,0,.4);position:relative;overflow:hidden}
+.envelope:before{content:"💗";position:absolute;font-size:7rem;opacity:.08;right:-10px;top:-20px}
+.envelope h3{font-family:"Baloo 2";font-size:2rem;color:#d94f91}
+.envelope p{line-height:1.9;margin:15px 0}
+.signature{font-family:"Baloo 2";font-size:1.5rem;color:#438fc0}
+
+.final{min-height:85vh;text-align:center}
+.final .big{font-family:"Baloo 2";font-size:clamp(4rem,11vw,9rem);line-height:.8}
+.final p{max-width:650px;color:#cdd2e8;line-height:1.8;margin:25px auto}
+footer{text-align:center;color:#777f9e;padding:30px;font-size:.75rem}
+
+.particle{position:fixed;top:-30px;z-index:2;pointer-events:none;animation:fall linear forwards}
+@media(max-width:800px){
+  nav{display:none}
+  .story-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){section{padding-left:5vw;padding-right:5vw}.gallery{grid-template-columns:1fr}.envelope{padding:25px}}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <div class="intro-card">
+    <div class="tiny">A LITTLE SOMETHING FROM BUZZ</div>
+    <h1>For Bebe 💗</h1>
+    <p>Not a fancy present. Just a small piece of our little Roblox world, made for your 22nd birthday.</p>
+    <button onclick="enterSite()">Open your birthday gift ✨</button>
+  </div>
+</div>
+
+<nav>
+  <a href="#home">Home</a><a href="#story">Us</a><a href="#memories">Memories</a><a href="#letter">Letter</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <span class="badge">October 6 • Jihan Naziiha • 22 🎂</span>
+    <h2>Happy 22nd Birthday,<br><span class="gradient">Bebe 💗💙</span></h2>
+    <p>
+      From Buzz to his favorite Bebe — here's a tiny website made from the moments
+      we've collected together in Roblox. We may not have met in person yet,
+      but every little adventure, screenshot, laugh, and quiet moment still means something to me.
+    </p>
+    <div class="hero-art">
+      <img src="images/date1.png" alt="Roblox memory together">
+      <img src="images/date2.png" alt="Roblox memory together">
+    </div>
+    <div class="scroll">↓ scroll down, bebe ↓</div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="story-grid">
+    <div class="story-text">
+      <span class="badge">OUR LITTLE WORLD</span>
+      <h2>Just <span class="gradient">us.</span></h2>
+      <p>
+        Most of our memories so far happened behind a screen, inside little Roblox worlds
+        where two avatars could go anywhere together.
+      </p>
+      <p>
+        And honestly? I like that we have these silly little memories to look back on.
+        The pictures aren't just pictures to me — they're pieces of our story.
+      </p>
+    </div>
+    <div class="card">
+      <span class="heart">💗</span>
+      <div class="quote">“Maybe we haven't met in the real world yet, but I'm happy I met you in mine.”</div>
+      <p style="color:#aeb6d6;margin-top:15px">— Buzz, for his Bebe</p>
+    </div>
+  </div>
+</section>
+
+<section id="memories">
+  <div class="gallery-wrap">
+    <span class="badge">OUR MEMORY WALL 📸</span>
+    <h2>Little moments, <span class="gradient">big meaning.</span></h2>
+    <p>Every screenshot here came from our Roblox adventures. Pick one and let the memory hit you 😭</p>
+    <div class="memory-stage">
+      <div class="memory-photo mp1"><img src="images/dino1.png"><span>🦖 our little adventure</span></div>
+      <div class="memory-photo mp2"><img src="images/hand.png"><span>🤝 just us</span></div>
+      <div class="memory-photo mp3"><img src="images/date1.png"><span>💗 favorite view</span></div>
+      <div class="memory-photo mp4"><img src="images/boat1.png"><span>🚤 our boat date</span></div>
+      <div class="memory-photo mp5"><img src="images/slope1.png"><span>✨ another random day</span></div>
+      <div class="memory-photo mp6"><img src="images/hand2.png"><span>💙 this one is cute</span></div>
+      <div class="memory-photo mp7"><img src="images/dino2.png"><span>🦖 exploring together</span></div>
+      <div class="memory-photo mp8"><img src="images/date2.png"><span>🥹 my favorite person</span></div>
+      <div class="memory-photo mp9"><img src="images/boat2.png"><span>🌙 another memory</span></div>
+      <div class="memory-photo mp10"><img src="images/slope2.png"><span>💫 us being us</span></div>
+      <div class="memory-glow"></div>
+    </div>
+  </div>
+</section>
+
+<section id="letter">
+  <div class="letter">
+    <span class="badge">OPEN THIS, BEBE 💌</span>
+    <h2>A letter from <span class="gradient">Buzz</span></h2>
+    <div class="envelope">
+      <h3>Happy Birthday, Jihan 💗</h3>
+      <p>
+        Happy 22nd birthday, Bebe. I hope today reminds you how special you are
+        and how much you deserve to be happy.
+      </p>
+      <p>
+        I know our story is a little different because we haven't met face-to-face yet.
+        A lot of our memories are just two Roblox characters running around,
+        taking screenshots, going on random adventures, and spending time together.
+        But those moments still became memories that I genuinely treasure.
+      </p>
+      <p>
+        Thank you for being someone I can laugh with, talk to, and make these
+        ridiculous little memories with. I don't know exactly what the future will look like,
+        but I hope we get to make a lot more memories — both in Roblox and, someday,
+        outside of it too.
+      </p>
+      <p>
+        For now, this little website is my way of saying:
+        <strong>I'm really happy I met you.</strong>
+      </p>
+      <p class="signature">Happy 22nd, my Bebe. 💗💙<br>— Buzz</p>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div>
+    <div class="big gradient">22 ✨</div>
+    <h2>Here's to another chapter, Bebe.</h2>
+    <p>
+      More laughs. More random Roblox adventures. More screenshots.
+      More “where are you?” messages. More memories.
+      And hopefully, one day, a memory that isn't inside a game. 💗💙
+    </p>
+    <button onclick="makeItRain()">One more surprise 💕</button>
+  </div>
+</section>
+
+<footer>Made with code, screenshots, and a lot of love — Buzz © 2026</footer>
+
+<script>
+function enterSite(){
+  document.getElementById('intro').classList.add('hide');
+  window.scrollTo({top:0,behavior:'smooth'});
+  makeItRain(18);
+}
+function makeItRain(amount=35){
+  const symbols=['💗','💙','✨','💕','🦖','⭐'];
+  for(let i=0;i<amount;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    p.style.left=Math.random()*100+'vw';
+    p.style.fontSize=(12+Math.random()*22)+'px';
+    p.style.animationDuration=(3+Math.random()*4)+'s';
+    p.style.animationDelay=(Math.random()*1.5)+'s';
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),8000);
+  }
+}
+</script>
+
+<!-- SAYANG-DAY ULTIMATE ADDITIONS -->
+<style>
+  .ultimate-section{padding:90px 20px;position:relative;overflow:hidden}
+  .ultimate-wrap{max-width:1050px;margin:auto;position:relative;z-index:2}
+  .section-kicker{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;opacity:.7;margin-bottom:10px}
+  .ultimate-title{font-size:clamp(2rem,5vw,4rem);margin:0 0 12px;line-height:1.05}
+  .ultimate-sub{max-width:700px;margin:0 auto 35px;opacity:.82;line-height:1.7}
+  .reasons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+  .reason-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:22px;text-align:left;backdrop-filter:blur(12px);transition:.35s;cursor:default}
+  .reason-card:hover{transform:translateY(-7px) rotate(-1deg);background:rgba(255,255,255,.13)}
+  .reason-no{font-size:.75rem;letter-spacing:.15em;opacity:.55}
+  .reason-card h3{margin:10px 0 7px;font-size:1rem}
+  .reason-card p{margin:0;line-height:1.6;opacity:.82;font-size:.92rem}
+  .timeline{display:grid;gap:16px;max-width:800px;margin:35px auto 0}
+  .timeline-item{display:grid;grid-template-columns:85px 1fr;gap:16px;align-items:center;text-align:left;padding:18px;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:.3s}
+  .timeline-item:hover{transform:translateX(8px);background:rgba(255,255,255,.11)}
+  .timeline-icon{font-size:2rem;text-align:center}
+  .timeline-item h3{margin:0 0 5px}.timeline-item p{margin:0;opacity:.75;line-height:1.5}
+  .future-card{max-width:760px;margin:30px auto 0;padding:42px 28px;border-radius:30px;background:linear-gradient(135deg,rgba(255,105,180,.14),rgba(80,160,255,.14));border:1px solid rgba(255,255,255,.16);box-shadow:0 25px 70px rgba(0,0,0,.2)}
+  .future-card p{font-size:1.1rem;line-height:2;margin:0}
+  .gift-stage{margin:35px auto 0;max-width:650px}
+  .gift-btn{border:0;background:none;cursor:pointer;font-size:7rem;filter:drop-shadow(0 15px 25px rgba(0,0,0,.3));transition:.35s}
+  .gift-btn:hover{transform:scale(1.1) rotate(-3deg)}
+  .gift-hint{opacity:.7;margin-top:-5px}
+  .secret-btn{padding:15px 24px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.09);color:inherit;font-weight:700;cursor:pointer;transition:.3s}
+  .secret-btn:hover{transform:scale(1.04);background:rgba(255,255,255,.15)}
+  .secret-panel{display:none;max-width:720px;margin:25px auto 0;padding:35px 28px;border-radius:28px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.15)}
+  .secret-panel.show{display:block;animation:secretIn .7s ease}
+  .secret-text{font-size:1.1rem;line-height:1.9;white-space:pre-line}
+  @keyframes secretIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+  .gift-message{display:none;margin:20px auto 0;max-width:700px;font-size:1.35rem;line-height:1.7}
+  .gift-message.show{display:block;animation:secretIn .8s ease}
+  .confetti-piece{position:fixed;top:-20px;z-index:9999;pointer-events:none;animation:fall 2.7s linear forwards}
+  @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+  .finale{padding:110px 20px 130px;text-align:center;position:relative;overflow:hidden}
+  .big22{font-size:clamp(6rem,24vw,15rem);font-weight:900;line-height:.8;background:linear-gradient(135deg,#ff75b8,#7fc8ff);-webkit-background-clip:text;background-clip:text;color:transparent;animation:pulse22 2.2s ease-in-out infinite}
+  @keyframes pulse22{50%{transform:scale(1.04)}}
+  .finale h2{font-size:clamp(2rem,6vw,4rem);margin:30px 0 10px}
+  .music-control{position:fixed;right:18px;bottom:18px;z-index:1000;border:1px solid rgba(255,255,255,.25);background:rgba(20,20,35,.75);color:white;border-radius:999px;padding:11px 16px;backdrop-filter:blur(10px);cursor:pointer}
+  @media(max-width:600px){
+    .timeline-item{grid-template-columns:55px 1fr}
+    .gift-btn{font-size:5.5rem}
+    .reason-card{padding:18px}
+    .ultimate-section{padding:70px 16px}
+  }
+</style>
+
+<section class="ultimate-section" id="reasons">
+  <div class="ultimate-wrap">
+    <div class="section-kicker">For my Bebe 💗</div>
+    <h2 class="ultimate-title">22 Reasons I Love You</h2>
+    <p class="ultimate-sub">22 little reasons for the girl turning 22. Some are serious, some are silly, but every one is yours.</p>
+    <div class="reasons-grid">
+      <article class="reason-card"><div class="reason-no">01</div><h3>You make me smile</h3><p>Even the smallest conversations with you can change my whole mood.</p></article>
+      <article class="reason-card"><div class="reason-no">02</div><h3>Your funny side</h3><p>I love the moments when we're just being ridiculous together.</p></article>
+      <article class="reason-card"><div class="reason-no">03</div><h3>Your little messages</h3><p>Sometimes one message from you is enough to make my day better.</p></article>
+      <article class="reason-card"><div class="reason-no">04</div><h3>Our random adventures</h3><p>We can turn a random Roblox game into a memory somehow.</p></article>
+      <article class="reason-card"><div class="reason-no">05</div><h3>Your patience</h3><p>Thank you for staying through my weird moments and random energy.</p></article>
+      <article class="reason-card"><div class="reason-no">06</div><h3>You feel familiar</h3><p>Even from a screen, talking to you can feel strangely comforting.</p></article>
+      <article class="reason-card"><div class="reason-no">07</div><h3>The way you care</h3><p>I notice the little ways you show that you care.</p></article>
+      <article class="reason-card"><div class="reason-no">08</div><h3>Our inside jokes</h3><p>Things that make absolutely no sense to anyone else somehow mean everything to us.</p></article>
+      <article class="reason-card"><div class="reason-no">09</div><h3>You're you</h3><p>I don't need a perfect reason. I just like you for being yourself.</p></article>
+      <article class="reason-card"><div class="reason-no">10</div><h3>Our screenshots</h3><p>Little pictures from a game became tiny pieces of our story.</p></article>
+      <article class="reason-card"><div class="reason-no">11</div><h3>Your presence</h3><p>Even when we're doing nothing special, I still like having you there.</p></article>
+      <article class="reason-card"><div class="reason-no">12</div><h3>Your energy</h3><p>You bring a kind of energy into my days that I don't want to lose.</p></article>
+      <article class="reason-card"><div class="reason-no">13</div><h3>Our conversations</h3><p>From serious talks to complete nonsense, I love them all.</p></article>
+      <article class="reason-card"><div class="reason-no">14</div><h3>Our little world</h3><p>Somehow we made our own tiny world inside all those games.</p></article>
+      <article class="reason-card"><div class="reason-no">15</div><h3>You surprise me</h3><p>There's always another side of you I get to discover.</p></article>
+      <article class="reason-card"><div class="reason-no">16</div><h3>The quiet moments</h3><p>Not every memory needs a big event to matter.</p></article>
+      <article class="reason-card"><div class="reason-no">17</div><h3>You listen</h3><p>Being heard by someone you care about means more than it seems.</p></article>
+      <article class="reason-card"><div class="reason-no">18</div><h3>You make time</h3><p>Every moment you choose to spend with me is something I appreciate.</p></article>
+      <article class="reason-card"><div class="reason-no">19</div><h3>Our memories</h3><p>They may be digital, but the feelings behind them are real to me.</p></article>
+      <article class="reason-card"><div class="reason-no">20</div><h3>You make ordinary days special</h3><p>That's a rare thing, Bebe.</p></article>
+      <article class="reason-card"><div class="reason-no">21</div><h3>You're part of my story</h3><p>And I'm genuinely happy our paths crossed.</p></article>
+      <article class="reason-card"><div class="reason-no">22</div><h3>Because you're my Bebe</h3><p>And honestly, that one reason already says a lot. 💗</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="ultimate-section" id="timeline">
+  <div class="ultimate-wrap">
+    <div class="section-kicker">Our little timeline 🎮</div>
+    <h2 class="ultimate-title">From Pixels to Memories</h2>
+    <p class="ultimate-sub">We didn't need a perfect setting. We just needed a place to spend time together.</p>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-icon">🌱</div><div><h3>The Beginning</h3><p>Two Roblox characters, one little world, and a story that started growing.</p></div></div>
+      <div class="timeline-item"><div class="timeline-icon">🦖</div><div><h3>Random Adventures</h3><p>Dinosaur chaos, exploring, laughing, and somehow turning games into memories.</p></div></div>
+      <div class="timeline-item"><div class="timeline-icon">🌅</div><div><h3>Pretty Places</h3><p>Sunsets, boats, quiet views, and those moments where we just stayed together.</p></div></div>
+      <div class="timeline-item"><div class="timeline-icon">🌙</div><div><h3>The Quiet Nights</h3><p>Even a simple bench under a night sky could become one of my favorite screenshots.</p></div></div>
+      <div class="timeline-item"><div class="timeline-icon">💗</div><div><h3>Today</h3><p>Now you're turning 22, and I get to make this little corner of the internet for you.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ultimate-section" id="future">
+  <div class="ultimate-wrap">
+    <div class="section-kicker">A little wish 💙</div>
+    <h2 class="ultimate-title">One Day...</h2>
+    <div class="future-card">
+      <p>
+        Right now, so many of our memories live inside a game.<br><br>
+        And honestly? I'm grateful for every one of them.<br><br>
+        But maybe one day, we'll make memories outside of it too.
+        Maybe we'll take way too many pictures, laugh at the dumbest things,
+        and look back at these Roblox screenshots and say,
+        <strong>“Look how it all started.”</strong><br><br>
+        Until then, I'll keep collecting these little moments with you. 💗
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="ultimate-section" id="secret">
+  <div class="ultimate-wrap" style="text-align:center">
+    <div class="section-kicker">Private message 🔒</div>
+    <h2 class="ultimate-title">Only Bebe Should Open This</h2>
+    <p class="ultimate-sub">Okay... this one's just for you.</p>
+    <button class="secret-btn" onclick="openSecret()">🔒 Open My Secret Message</button>
+    <div class="secret-panel" id="secretPanel">
+      <div class="secret-text" id="secretText"></div>
+    </div>
+  </div>
+</section>
+
+<section class="ultimate-section" id="gift">
+  <div class="ultimate-wrap" style="text-align:center">
+    <div class="section-kicker">Your birthday surprise 🎁</div>
+    <h2 class="ultimate-title">There's One More Thing...</h2>
+    <p class="ultimate-sub">You have to open it yourself.</p>
+    <div class="gift-stage">
+      <button class="gift-btn" onclick="openGift()" aria-label="Open birthday gift">🎁</button>
+      <div class="gift-hint">Tap the gift, Bebe 💗</div>
+      <div class="gift-message" id="giftMessage">
+        🎉 HAPPY 22ND BIRTHDAY, BEBE! 🎉<br>
+        You are one of my favorite people and one of my favorite stories.
+        Thank you for every laugh, every random adventure, and every little memory.
+        <br><br><strong>— Buzz 💙</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="finale">
+  <div class="big22">22</div>
+  <h2>Happy Birthday, Bebe. 💗</h2>
+  <p>From Buzz — with a whole little world of memories made for you. 💙</p>
+</section>
+
+<button class="music-control" id="musicControl" onclick="toggleMusic()">🔇 Music</button>
+
+<script>
+const secretMessage = `Bebe,
+
+I know this isn't some huge fancy gift in the real world.
+It's just a little website made from code, screenshots, and a lot of thought.
+
+But every picture here reminds me that even our smallest moments can mean a lot.
+
+Thank you for being part of my days.
+Thank you for the laughs, the random games, the conversations, and the memories.
+
+I hope your 22nd year gives you so many reasons to smile.
+
+And if I could give you one wish from me,
+it would be that we keep making little moments together—
+until one day, they're not just inside Roblox anymore.
+
+Happy birthday, Bebe. 💗
+
+— Buzz`;
+
+function openSecret(){
+  const panel=document.getElementById('secretPanel');
+  const target=document.getElementById('secretText');
+  panel.classList.add('show');
+  target.textContent='';
+  let i=0;
+  const timer=setInterval(()=>{
+    target.textContent += secretMessage[i++] || '';
+    if(i>=secretMessage.length) clearInterval(timer);
+  }, 18);
+}
+
+function openGift(){
+  const msg=document.getElementById('giftMessage');
+  msg.classList.add('show');
+  for(let i=0;i<70;i++){
+    const p=document.createElement('span');
+    p.className='confetti-piece';
+    p.textContent=['💗','💙','✨','🎉','💕'][Math.floor(Math.random()*5)];
+    p.style.left=Math.random()*100+'vw';
+    p.style.fontSize=(12+Math.random()*18)+'px';
+    p.style.animationDelay=(Math.random()*.6)+'s';
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),3400);
+  }
+}
+
+let audioCtx=null, musicOn=false, musicTimer=null;
+function toggleMusic(){
+  const btn=document.getElementById('musicControl');
+  if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+  if(musicOn){
+    clearInterval(musicTimer); musicOn=false; btn.textContent='🔇 Music'; return;
+  }
+  musicOn=true; btn.textContent='🔊 Music';
+  const playNote=()=>{
+    if(!musicOn) return;
+    const now=audioCtx.currentTime;
+    const notes=[261.63,329.63,392.00,523.25,392.00,329.63];
+    const freq=notes[Math.floor(Math.random()*notes.length)];
+    const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+    o.type='sine'; o.frequency.value=freq;
+    g.gain.setValueAtTime(.0001,now);
+    g.gain.exponentialRampToValueAtTime(.045,now+.03);
+    g.gain.exponentialRampToValueAtTime(.0001,now+.55);
+    o.connect(g); g.connect(audioCtx.destination); o.start(now); o.stop(now+.6);
+  };
+  playNote(); musicTimer=setInterval(playNote,700);
+}
+</script>
+<!-- END SAYANG-DAY ULTIMATE ADDITIONS -->
+
+</body>
+</html>
